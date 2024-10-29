@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4 In A Row Game</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap" rel="stylesheet">
+  </head>
+  <body style="font-family: 'Kelly Slab', cursive;">
+    <div class="game-container">
+      <div class="balls"></div>
+      <img src="./assets/images/image.png" alt="" class="board" />
+      <div class="columns">
+        <div class="column" data-column="0"></div>
+        <div class="column" data-column="1"></div>
+        <div class="column" data-column="2"></div>
+        <div class="column" data-column="3"></div>
+        <div class="column" data-column="4"></div>
+        <div class="column" data-column="5"></div>
+        <div class="column" data-column="6"></div>
+      </div>
+      <div class="game-over">
+        <div class="line"></div>
+      </div>
+      <div class="game-stats">
+        <div class="stats">
+          <div class="PLAYER"></div>
+          <div class="score">0 - 0</div>
+          <div class="OPPENENT"></div>
+        </div>
+        <div class="btns">
+          <div class="reset-score">
+            <button disabled>RESET SCORE</button>
+          </div>
+          <div class="play-again">
+            <button disabled>PLAY AGAIN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #0d1117;
+}
+
+:root {
+  --game-container-width: 700px;
+  --game-container-height: 600px;
+  --game-container-padding: 100px;
+  --game-container-radius: 0;
+  --game-stats-height: 200px;
+
+  --number-of-columns: 7;
+  --ball-size: 60px;
+  --ball-border-size: 10px;
+
+  --game-container-bg-color: #d9e1e9;
+  --player-ball-color: #e1dcbe;
+  --oppenent-ball-color:#04243b;
+  font-family: "Kelly Slab" ;
+  
+}
+
+.game-container {
+  position: relative;
+  padding-top: var(--game-container-padding);
+  background-color: var(--game-container-bg-color);
+  border-top-left-radius: var(--game-container-radius);
+  border-top-right-radius: var(--game-container-radius);
+
+  margin: auto;
+}
+.game-container,
+.balls,
+.board,
+.columns {
+  width: var(--game-container-width);
+  height: var(--game-container-height);
+}
+.balls,
+.board,
+.columns {
+  position: absolute;
+}
+
+/* COLUMNS */
+.columns {
+  display: flex;
+}
+.column {
+  width: calc(var(--game-container-width) / var(--number-of-columns));
+  height: var(--game-container-height);
+  border-radius: 0;
+  z-index: 2;
+}
+.column-hover:hover {
+  background-color: rgba(154, 154, 154, 0.3);
+}
+
+/* BALLS */
+.PLAYER,
+.OPPENENT {
+  width: var(--ball-size);
+  height: var(--ball-size);
+
+  border-radius: 50%;
+  border: var(--ball-border-size) solid #242525;
+
+  position: absolute;
+}
+.PLAYER {
+  background-color: var(--player-ball-color);
+}
+.OPPENENT {
+  background-color: var(--oppenent-ball-color);
+}
+
+/* GAME STATS */
+.game-stats {
+  width: var(--game-container-width);
+  height: var(--game-stats-height);
+
+  position: absolute;
+  background-color: var(--game-container-bg-color);
+  bottom: calc(-1 * var(--game-stats-height));
+}
+.game-stats .PLAYER {
+  top: 60px;
+  left: 60px;
+}
+.game-stats .OPPENENT {
+  top: 60px;
+  left: 360px;
+}
+.score {
+  position: absolute;
+  color: #04243b;
+  font-size: 3rem;
+  top: 70px;
+  left: 200px;
+  font-family: "Kelly Slab";
+}
+.btns {
+  position: absolute;
+  right: 0;
+
+  width: var(--game-stats-height);
+  height: var(--game-stats-height);
+
+  border-left: 1px solid #7a7a7a;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.btns button {
+  border: none;
+  padding: 1rem;
+  font-size: 1.1rem;
+  color: white;
+  border-radius: 15px;
+  transition: filter 0.2s ease-in-out;
+}
+
+.btns button:hover {
+  filter: brightness(1.5);
+  cursor: pointer;
+}
+.btns button:disabled {
+  background-color: #4c4c4c;
+  filter: brightness(1);
+  color: #fff;
+  cursor: default;
+}
+.reset-score button {
+  background-color: #232628;
+}
+.play-again button {
+  margin-top: 1rem;
+  background-color: #600d93;
+}
+
+/* GAME OVER */
+.game-over {
+  position: absolute;
+  width: var(--game-container-width);
+  height: var(--game-container-height);
+}
+.line {
+  width: 0px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: var(--game-container-radius);
+
+  position: absolute;
+  left: 145px;
+  top: 145px;
+
+  transform-origin: 0 0;
+  transition: width 300ms ease-in-out;
+}
+.line.horizontal {
+  width: 310px;
+}
+.line.vertical {
+  width: 310px;
+}
+.line.diagonal {
+  width: 430px;
+}
